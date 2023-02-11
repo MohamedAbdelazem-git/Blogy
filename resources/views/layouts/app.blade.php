@@ -19,10 +19,17 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+
         a {
             text-decoration: none,
         }
@@ -66,7 +73,7 @@
                             <div class="v-hr "></div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link m-0" href="../posts">
+                            <a class="nav-link m-0" href="{{ route('posts.index') }}">
                                 <h6 class="nav-link m-0">All Posts</h6>
                             </a>
                         </li>
