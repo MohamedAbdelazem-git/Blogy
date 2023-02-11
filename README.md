@@ -3,7 +3,10 @@
 Blogy is a web application built with Laravel framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. 
 
 ## Demo
-https://user-images.githubusercontent.com/64663044/218235125-1ae6dd0e-6e36-4306-8226-928341ec148b.mp4
+
+
+https://user-images.githubusercontent.com/64663044/218235846-28ec9b28-c973-44db-ae2e-757d4bd6ea47.mp4
+
 
 
 ### have some features, such as:
