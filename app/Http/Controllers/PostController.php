@@ -48,7 +48,6 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'user_id' => 'required',
             'image' =>  'required|image|mimes:jpg,png,jpeg|max:2048'
         ]);
         $imageName = time() . '.' . $request->image->extension();
@@ -72,7 +71,6 @@ class PostController extends Controller
     public function show(Post $post)
     {
         $post = Post::find($post)->first();
-        // dd($data);
         return  view('posts.show', $data = ['post' => $post]);
     }
 
@@ -101,8 +99,6 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'user_id' => 'required',
-            'image' => 'required'
         ]);
         $imageName = '';
         if ($request->hasFile('image')) {
@@ -114,7 +110,7 @@ class PostController extends Controller
         } else {
             $imageName = $post->image;
         }
-        $postData = ['title' => $request->title, 'description' => $request->description, 'image' => $imageName];
+        $postData = ['title' => $request->title, 'description' => $request->description, 'image' => $imageName, 'user_id' => auth()->id()];
         // $post->title = $request->title;
         // $post->description = $request->description;
         // $post->user_id = auth()->id();

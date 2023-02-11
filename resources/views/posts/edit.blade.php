@@ -4,7 +4,6 @@
 @endsection
 
 @section('content')
-    {{-- @dd($post) --}}
     @if ($errors->any())
         @dump($errors)
         <div class="alert alert-danger">
@@ -27,15 +26,6 @@
             <label for="exampleFormControlTextarea1" class="form-label">Description</label>
             <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3">{{ $post->description }}</textarea>
         </div>
-        {{-- <div class="mb-3">
-            <label for="exampleFormControlInput2" class="form-label">Post Creator</label>
-            <select name="user_id" class="form-select" id="exampleFormControlInput2">
-                @foreach ($users as $user)
-                    <option value="{{ $user->id }}" @if ($post->user_id == $user->id) {{ 'selected' }} @endif>
-                        {{ $user->name }}</option>
-                @endforeach
-            </select>
-        </div> --}}
         <div class="mb-3">
             <label for="formFile" class="form-label">Post image</label>
             <input class="form-control" type="file" id="formFile" name="image">

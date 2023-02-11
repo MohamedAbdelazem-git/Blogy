@@ -73,9 +73,10 @@
                             </div>
                         </form>
                         <hr class="m-auto mt-4 w-25 ">
-                        <h5 class="text-center my-2">Sign-in with </h5>
-                        <div class="text-center mt-3">
-                            <a href="" class=" btn btn-dark m-auto"><i class="fa-brands fa-github fs-5"></i></a>
+                        <h5 class="text-center my-2 ">Sign-in with </h5>
+                        <div class="text-center mt-3 ">
+                            <a href="{{ route('loginwithgithub') }}" class=" btn btn-light m-auto "><i
+                                    class="fa-brands fa-github fa-2xl"></i></a>
                         </div>
                     </div>
                 </div>
