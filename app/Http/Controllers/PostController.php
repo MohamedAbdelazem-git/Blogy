@@ -105,17 +105,12 @@ class PostController extends Controller
             $imageName = time() . '.' . $request->image->extension();
             $request->image->move(public_path('images'), $imageName);
             if ($post->image) {
-                Storage::delete('public/images/' . $post->image);
+                unlink('images/' . $post->image);
             }
         } else {
             $imageName = $post->image;
         }
         $postData = ['title' => $request->title, 'description' => $request->description, 'image' => $imageName, 'user_id' => auth()->id()];
-        // $post->title = $request->title;
-        // $post->description = $request->description;
-        // $post->user_id = auth()->id();
-        // $post->image = $imageName;
-        // $post->update($request->except('_token', '_method'));
         $post->update($postData);
         return to_route('posts.index');
     }
@@ -128,6 +123,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        // Storage::delete('public/images/' . $post->image);
+        unlink('images/' . $post->image);
         $post->delete();
 
         return to_route('posts.index');
